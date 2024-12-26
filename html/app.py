@@ -107,19 +107,23 @@ def logout():
     else:
         return error_page("You are already logged out")
 
+@login_required
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
-
 
 
 @app.route('/favicon.ico', methods=['GET'])
 def favicon():
     return send_from_directory(app.root_path, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
+@app.route('/stats', methods=['GET'])
+def stats():
+    return None
+
 def error_page(error_message: str):
     error_message = sanitize_string(error_message, extend_allowd_chars=True)
     return render_template('errors/error.html', error_message=error_message)
 
 if __name__ == '__main__':
-    app.run(debug=False, host="0.0.0.0")
+    app.run(debug=True, host="0.0.0.0")

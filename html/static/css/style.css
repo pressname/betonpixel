@@ -1,0 +1,129 @@
+@font-face {
+    font-family: 'pilowlava';
+    src: URL('fonts/pilowlava/Fonts/webfonts/Pilowlava-Regular.woff2')  format('woff2');
+}
+@font-face {
+    font-family: 'spacegrotesk';
+    src: URL('fonts/space-grotesk-1.1.4/webfont/SpaceGrotesk-Regular.woff2') format('woff2');
+    src: URL('fonts/space-grotesk-1.1.4/webfont/SpaceGrotesk-Bold.woff2') format('woff2');
+    src: URL('fonts/space-grotesk-1.1.4/webfont/SpaceGrotesk-Light.woff2') format('woff2');
+    src: URL('fonts/space-grotesk-1.1.4/webfont/SpaceGrotesk-Medium.woff2') format('woff2');
+    src: URL('fonts/space-grotesk-1.1.4/webfont/SpaceGrotesk-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'space-mono';
+    src: URL('fonts/space-mono/SpaceMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'uncut-sans';
+    src: URL('fonts/uncut-sans/Webfonts/UncutSans-Regular.woff2') format('woff2');
+}
+
+:root {
+    --color-primary: #FF5053;
+    --color-highlight: #FEF2FF;
+    --color-accent-a: #B2AAFF;
+    --color-accent-b: #6A5FDB;
+    --color-accent-c: #29114C;
+    --color-accent-d: #261A66;
+    --color-accent-e: #190B2F;
+    --color-background: #0F000A;
+}
+
+
+body {
+    background-color: #0F000A;
+    color: #FEF2FF;
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Set the minimum height of the body to the full viewport height */
+}
+
+h1, h2 {
+    color: #6A5FDB;
+    text-align: center;
+}
+
+.menu-container {
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 10px;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.menu a {
+    display: block;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #FEF2FF; /* Dark gray text color */
+}
+
+.menu a:hover {
+    background-color: #B2AAFF; /* Light gray background on hover */
+}
+
+.menu a.selected {
+    background-color: #6A5FDB; /* Purple background for selected item */
+    color: #FEF2FF; /* White text color */
+}
+
+.menu a.logout-button {
+    background-color: #FF5053; /* Purple background for selected item */
+    color: #FEF2FF; /* White text color */
+}
+
+.head-container {
+    text-align: center;
+}
+
+.image-container {
+    text-align: center;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.image-item {
+    flex: 0 0 33%; /* Each item takes up 32% of the container width */
+    max-width: 33%; /* Limit maximum width of each item */
+    padding: 8px; /* Add spacing between images */
+    box-sizing: border-box; /* Include padding in the total width */
+    aspect-ratio: 1; /* Force aspect ratio to be 1:1 (square) */
+}
+
+/* Set the width of the images to fill their parent container */
+.image-item img {
+    width: 100%; /* Make sure images fill their parent container */
+    height: 100%; /* Make sure images fill their parent container */
+    object-fit: cover; /* Crop the image to cover the entire box */
+}
+
+.image-item:hover img {
+    transform: scale(0.95);
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+@media (max-width: 600px) {
+    .menu {
+        display: block;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Align items horizontally in the center */
+    }
+}
